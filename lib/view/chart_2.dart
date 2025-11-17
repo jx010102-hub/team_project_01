@@ -2,25 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:team_project_01/model/developer_data.dart';
 
-class Bar extends StatefulWidget {
-  
-  final List<DeveloperData> data;
-
-  const Bar({super.key, required this.data});
+class Chart2 extends StatefulWidget {
+  const Chart2({super.key});
 
   @override
-  State<Bar> createState() => _HomeState();
+  State<Chart2> createState() => _HomeState();
 }
 
-class _HomeState extends State<Bar> {
-
-  // Property
+class _HomeState extends State<Chart2> {
+  //property
+  late List<DeveloperData> data;
   late TooltipBehavior tooltipBehavior;
 
   @override
   void initState() {
     super.initState();
+    data = [];
     tooltipBehavior = TooltipBehavior(enable: true);
+    addData();
+  }
+
+  addData() {
+    //
+    data.add(DeveloperData(year: 2017, developers: 19000));
+    data.add(DeveloperData(year: 2018, developers: 40000));
+    data.add(DeveloperData(year: 2019, developers: 35000));
+    data.add(DeveloperData(year: 2020, developers: 37000));
+    data.add(DeveloperData(year: 2021, developers: 45000));
   }
 
   @override
@@ -38,7 +46,8 @@ class _HomeState extends State<Bar> {
           height: 600,
           child: SfCartesianChart(
             title: ChartTitle(
-              text: 'Yearly Growth in the Flutter Community\n\n'
+              text:
+                  'Yearly Growth in the Flutter Community\n\n',
             ),
             tooltipBehavior: tooltipBehavior,
             series: [
@@ -46,10 +55,16 @@ class _HomeState extends State<Bar> {
               // BarSeries : 가로축 막대그래프
               ColumnSeries<DeveloperData, int>(
                 name: '사이트 수',
-                dataSource: widget.data,
-                xValueMapper: (DeveloperData developers, _) => developers.year,
-                yValueMapper: (DeveloperData developers, _) => developers.developers,
-                dataLabelSettings: DataLabelSettings(isVisible: true),
+                dataSource: data,
+                xValueMapper:
+                    (DeveloperData developers, _) =>
+                        developers.year,
+                yValueMapper:
+                    (DeveloperData developers, _) =>
+                        developers.developers,
+                dataLabelSettings: DataLabelSettings(
+                  isVisible: true,
+                ),
                 enableTooltip: true,
               ),
             ],

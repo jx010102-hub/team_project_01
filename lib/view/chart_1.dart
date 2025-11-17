@@ -10,6 +10,6 @@ class Chart1 extends StatefulWidget {
 class _Chart1State extends State<Chart1> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(appBar: AppBar(title: Text('dfdf')));
   }
 }

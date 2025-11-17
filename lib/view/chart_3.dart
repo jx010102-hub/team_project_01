@@ -18,11 +18,11 @@ class _Chart3State extends State<Chart3> {
   void initState() {
     super.initState();
     data = [];
-    tooltipBehavior = TooltipBehavior(enable : true);
+    tooltipBehavior = TooltipBehavior(enable: true);
     addData();
   }
 
-  addData(){
+  addData() {
     data.add(DeveloperData(year: 2017, developers: 19000));
     data.add(DeveloperData(year: 2018, developers: 40000));
     data.add(DeveloperData(year: 2019, developers: 35000));
@@ -33,29 +33,37 @@ class _Chart3State extends State<Chart3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Bar Chart'),
-      ),
+      appBar: AppBar(title: Text('Bar Chart')),
       body: Center(
         child: SizedBox(
           width: 300,
           height: 550,
           child: SfCircularChart(
             title: ChartTitle(
-              text: 'Yearly Growth in the Flutter Coummunity'
+              text:
+                  'Yearly Growth in the Flutter Coummunity',
             ),
-            tooltipBehavior: tooltipBehavior, // 눌렀을때 수치 뜨게 하는 법
+            tooltipBehavior:
+                tooltipBehavior, // 눌렀을때 수치 뜨게 하는 법
             series: <CircularSeries<DeveloperData, int>>[
               PieSeries<DeveloperData, int>(
                 name: 'Site',
                 dataSource: data,
                 explode: true, // 한조각만 띄어내는거
-                selectionBehavior: SelectionBehavior(enable: true), // 한조각만 눌러보는 거
-                xValueMapper: (DeveloperData developers, _) => developers.year,
-                yValueMapper: (DeveloperData developers, _) => developers.developers,
-                dataLabelSettings: DataLabelSettings(isVisible: true),
+                selectionBehavior: SelectionBehavior(
+                  enable: true,
+                ), // 한조각만 눌러보는 거
+                xValueMapper:
+                    (DeveloperData developers, _) =>
+                        developers.year,
+                yValueMapper:
+                    (DeveloperData developers, _) =>
+                        developers.developers,
+                dataLabelSettings: DataLabelSettings(
+                  isVisible: true,
+                ),
                 enableTooltip: true,
-              )
+              ),
             ],
           ),
         ),

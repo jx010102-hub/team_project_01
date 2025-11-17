@@ -34,7 +34,7 @@ class _ScatterState extends State<Chart1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Scatter charts')),
+      appBar: AppBar(title: Text('Scatter charts 시온')),
       body: Center(
         child: SizedBox(
           width: 380,

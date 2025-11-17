@@ -33,7 +33,7 @@ class _Chart3State extends State<Chart3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Bar Chart')),
+      appBar: AppBar(title: Text('Bar Chart 민욱')),
       body: Center(
         child: SizedBox(
           width: 300,

@@ -10,6 +10,10 @@ class Chart3 extends StatefulWidget {
 class _Chart3State extends State<Chart3> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('상현'),
+      ),
+    );
   }
 }

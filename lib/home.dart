@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:team_project_01/view/chart_1.dart';
 import 'package:team_project_01/view/chart_2.dart';

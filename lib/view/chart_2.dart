@@ -12,7 +12,14 @@ class _Chart2State extends State<Chart2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('1234'),
+        title: Text('12345'),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            Text('asdfasdf')
+          ],
+        ),
       ),
     );
   }
